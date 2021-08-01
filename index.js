@@ -1,6 +1,5 @@
 const { CommandoClient } = require('discord.js-commando');
 const { Collection } = require('discord.js');
-const limit = new Collection();
 const { readdirSync } = require('fs');
 require('dotenv').config();
 const publicIP = require('public-ip');
@@ -13,7 +12,7 @@ const client = new CommandoClient({
     owner: OWNERID,
 });
 
-client.limit = limit;
+client.limit = new Collection();
 client.cooldownAmount = 1200 * 1000;
 
 client.registry

@@ -12,12 +12,10 @@ module.exports = async (client, message, prefix) => {
         const tag = await get(cmd);
         const text = utf8.decode(tag.text);
 
-        const msg = await message.channel.send(text, {
+        await message.channel.send(text, {
             files: tag.images,
             split: true,
         });
 
-        if (_.isArray(msg)) msg.forEach(el => el.suppressEmbeds());
-        else msg.suppressEmbeds();
     }
 };
