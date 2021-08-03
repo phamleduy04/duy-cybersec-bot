@@ -13,6 +13,7 @@ module.exports = class botInfoCommand extends Command {
             group: 'misc',
             memberName: 'botinfo',
             description: 'Check thông tin của bot!',
+            guildOnly: true,
         });
     }
     async run(message) {
